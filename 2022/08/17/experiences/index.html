@@ -28,7 +28,7 @@
 <meta property="og:description" content="【字字血泪】 本文可能是用来记录搭建博客中遇到的问题&#x2F;踩到的坑，记录解决方法和今后的注意事项。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-17T10:48:31.000Z">
-<meta property="article:modified_time" content="2022-08-17T07:01:00.599Z">
+<meta property="article:modified_time" content="2022-08-17T07:03:14.780Z">
 <meta property="article:author" content="CHen Yuqing">
 <meta property="article:tag" content="others">
 <meta name="twitter:card" content="summary">
@@ -195,7 +195,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-08-17 10:48:31 / Modified: 07:01:00" itemprop="dateCreated datePublished" datetime="2022-08-17T10:48:31Z">2022-08-17</time>
+              <time title="Created: 2022-08-17 10:48:31 / Modified: 07:03:14" itemprop="dateCreated datePublished" datetime="2022-08-17T10:48:31Z">2022-08-17</time>
             </span>
 
           
@@ -231,10 +231,10 @@
 <li>修改配置<br />
 打开<strong>next主题配置</strong>的<code>_config.yml</code>文件，定位到如下片段<br />
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># Define custom file paths.</span><br><span class="line"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span><br><span class="line">custom_file_path:</span><br><span class="line">#head: source/_data/head.swig</span><br><span class="line">#header: source/_data/header.swig</span><br><span class="line">#sidebar: source/_data/sidebar.swig</span><br><span class="line">#postMeta: source/_data/post-meta.swig</span><br><span class="line">#postBodyEnd: source/_data/post-body-end.swig</span><br><span class="line">#footer: source/_data/footer.swig</span><br><span class="line">#bodyEnd: source/_data/body-end.swig</span><br><span class="line">#variable: source/_data/variables.styl</span><br><span class="line">#mixin: source/_data/mixins.styl</span><br><span class="line">#style: source/_data/styles.styl</span><br></pre></td></tr></table></figure> 将最下面的<code>style</code>取消注释<br />
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    style: source/_data/styles.styl</span><br><span class="line">    ```  </span><br><span class="line">3. 创建背景配置文件  </span><br><span class="line">   **在博客根目录的`source`文件夹下**新建`_data`文件夹与`styles.styl`文件，添加代码  </span><br></pre></td></tr></table></figure> // 添加背景图片 body { background:
-url(/images/background.jpg);//第一步的图片地址 background-size: cover;
-background-repeat: no-repeat; background-attachment: fixed;
-background-position: 50% 50%; } ```</li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">style: source/_data/styles.styl</span><br></pre></td></tr></table></figure></li>
+<li>创建背景配置文件<br />
+<strong>在博客根目录的<code>source</code>文件夹下</strong>新建<code>_data</code>文件夹与<code>styles.styl</code>文件，添加代码<br />
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 添加背景图片</span><br><span class="line">body &#123;</span><br><span class="line"> background: url(/images/background.jpg);//第一步的图片地址</span><br><span class="line"> background-size: cover;</span><br><span class="line"> background-repeat: no-repeat;</span><br><span class="line"> background-attachment: fixed;</span><br><span class="line"> background-position: 50% 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
 
     </div>
