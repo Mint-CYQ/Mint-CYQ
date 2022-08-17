@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mint-cyq.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="本文用于存放整理数学分析b1、b2课程的笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MathematicalAnalysis">
+<meta property="og:url" content="https://mint-cyq.github.io/2022/08/13/MathematicalAnalysis/index.html">
+<meta property="og:site_name" content="CYQ’s BLOG">
+<meta property="og:description" content="本文用于存放整理数学分析b1、b2课程的笔记。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-08-12T17:54:49.000Z">
+<meta property="article:modified_time" content="2022-08-15T10:02:16.836Z">
+<meta property="article:author" content="CHen Yuqing">
+<meta property="article:tag" content="study">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://mint-cyq.github.io/2022/08/13/MathematicalAnalysis/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>MathematicalAnalysis | CYQ’s BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">CYQ’s BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mint-cyq.github.io/2022/08/13/MathematicalAnalysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/JW5_1.jpeg">
+      <meta itemprop="name" content="CHen Yuqing">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYQ’s BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MathematicalAnalysis
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-08-12 17:54:49" itemprop="dateCreated datePublished" datetime="2022-08-12T17:54:49Z">2022-08-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-08-15 10:02:16" itemprop="dateModified" datetime="2022-08-15T10:02:16Z">2022-08-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math-Phys-Basis/" itemprop="url" rel="index"><span itemprop="name">Math. & Phys. Basis</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文用于存放整理数学分析b1、b2课程的笔记。<br>
+<span id="more"></span></p>
+<h2 id="basic-information-基本信息">Basic Information | 基本信息</h2>
+<ul>
+<li>Subject: Mathematic Analysis</li>
+<li>Textbooks: 数学分析讲义第一册&amp;第二册.程艺,陈卿,李平</li>
+<li>Reference books:
+<ul>
+<li>微积分学习指导上&amp;下.李尚志<br>
+</li>
+<li>数学分析习题课讲义上&amp;下.谢惠民<br>
+</li>
+<li>吉米多维奇高等数学习题精选</li>
+</ul></li>
+<li>Score:
+<ul>
+<li>21F b1 3.7/87<br>
+</li>
+<li>22S b2 3.7/86</li>
+</ul></li>
+</ul>
+<h2 id="read-me-概况说明">Read Me | 概况说明</h2>
+<p>数学分析是大一一年中学分最多也最重要的一门基础课。<br>
+大一入学前的暑假，我照着<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Lv411r7wa?spm_id_from=333.337.search-card.all.click">b站上程艺教授的网课</a>预习数分b1，主要是弄懂基础知识并尝试写一些课后题。开学之后，主要学习方式是上课记笔记、课本证明与例题自己重新写、课后题全写、整理错题，以及参考书微积分学习指导的补充习题。这一套下来要花很多时间，但是对于本身数学并不好的我而言，效果其实不错。b1主要习惯并掌握“分析”的语言和思维，因此在这一门课程的学习中我比较重视证明，同时注意积累自己并不熟悉的思路和技巧。<br>
+学习数分b2的总体流程和b1差不多，也是前一个假期通过网课预习，开学之后上课记笔记、重写例题、基本完成所有课后题、增加课外补充题、整理错题。但是b2与b1相比，内容会更加偏重计算，需要使用很多公式与结论进行解题，因此在b2这一门课程中我放低了对证明的要求，注重公式、定理的整理并重视计算。<br>
+总之数分的大部分内容比同期学的线代要具体很多，其实理解起来并不太难，对个人来说可以算是一门收获成绩和付出努力呈正相关的课程。</p>
+<h2 id="notes-materials-exams-笔记整理与试题">Notes &amp; Materials
+&amp; Exams | 笔记、整理与试题</h2>
+<h3 id="chapter1-数与数列">Chapter1 数与数列</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch1_NumbersAndSequences/Notes_RealNumber.pdf">课堂笔记_实数</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch1_NumbersAndSequences/Notes_Sequences.pdf">课堂笔记_数列</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch1_NumbersAndSequences/Exercises_ProofOnText.pdf">习题_课本定理证明</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch1_NumbersAndSequences/Exercises_Examples.pdf">习题_例题与错题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch1_NumbersAndSequences/Exercises_Examples_CrLHL.pdf">习题_来自LHL的例题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch1_NumbersAndSequences/Exercises_More.pdf">习题_补充题</a></p>
+<h3 id="chapter2-函数">Chapter2 函数</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch2_Functions/Notes_Limits.pdf">课堂笔记_函数极限</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch2_Functions/Notes_Continuity.pdf">课堂笔记_函数连续性</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch2_Functions/Exercises_ProofOnText.pdf">习题_课本定理证明</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch2_Functions/Exercises_Examples.pdf">习题_例题与错题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch2_Functions/Exercises_More.pdf">习题_补充题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch2_Functions/Exercises_ReviewLesson.pdf">习题_习题课</a></p>
+<h3 id="chapter3-微分">Chapter3 微分</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch3_Differential/Notes_Derivatives.pdf">课堂笔记_导数</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch3_Differential/Notes_DerivativesAndFunctions.pdf">课堂笔记_导数与函数</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch3_Differential/Notes_Differential.pdf">课堂笔记_微分</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch3_Differential/Notes_TaylorFormula.pdf">课堂笔记_Taylor展开</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch3_Differential/Exercises_ProofOnText.pdf">习题_课本定理证明</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch3_Differential/Exercises_Examples.pdf">习题_例题与错题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch3_Differential/Exercises_Textbook.pdf">习题_课后题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch3_Differential/Exercises_More.pdf">习题_补充题</a></p>
+<h3 id="chapter4-不定积分原函数">Chapter4 不定积分（原函数）</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch4_IndefiniteIntegral/Notes_PrimitiveFunction.pdf">课堂笔记_原函数及基本计算</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch4_IndefiniteIntegral/Notes_IntegralOfRationalFormula.pdf">课堂笔记_有理式的不定积分</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch4_IndefiniteIntegral/Exercises_Examples.pdf">习题_例题与错题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch4_IndefiniteIntegral/Exercises_TextAndMore.pdf">习题_课后题与补充题</a></p>
+<h3 id="chapter5-积分">Chapter5 积分</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch5_DefiniteIntegral/Notes_PropertiesOfIntegrals.pdf">课堂笔记_积分的性质与计算</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch5_DefiniteIntegral/Notes_ApplicationsOfIntegrals.pdf">课堂笔记_积分的应用与推广</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch5_DefiniteIntegral/Exercises_ProofOnText.pdf">习题_课本定理证明</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch5_DefiniteIntegral/Exercises_Examples.pdf">习题_例题与错题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch5_DefiniteIntegral/Exercises_Textbook.pdf">习题_课后题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch5_DefiniteIntegral/Exercises_More.pdf">习题_补充题</a></p>
+<h3 id="chapter6-常微分方程">Chapter6 常微分方程</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch6_DifferentialEquations/Notes_DifferentialEquationOfFirstOrder.pdf">课堂笔记_一阶微分方程</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch6_DifferentialEquations/Notes_SecondOrderLinearDifferentialEquation.pdf">课堂笔记_二阶线性微分方程</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch6_DifferentialEquations/Exercises_ProofOnText.pdf">习题_课本定理证明</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch6_DifferentialEquations/Exercises_Examples.pdf">习题_例题与错题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch6_DifferentialEquations/Exercises_WrongQuestions.pdf">习题_计算错题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch6_DifferentialEquations/Exercises_Textbook.pdf">习题_课后题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch6_DifferentialEquations/Exercises_More.pdf">习题_补充题</a></p>
+<h3 id="chapter7-无穷级数">Chapter7 无穷级数</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch7_InfiniteSeries/Notes_SeriesOfNumbers.pdf">课堂笔记_数项级数</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch7_InfiniteSeries/Notes_SeriesOfFunctions.pdf">课堂笔记_函数项级数</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch7_InfiniteSeries/Notes_PowerSeriesAndTaylorSeries.pdf">课堂笔记_幂级数与Taylor展式</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch7_InfiniteSeries/Notes_ApplicationOfSeries.pdf">课堂笔记_级数的应用</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch7_InfiniteSeries/Exercises_ProofOnText.pdf">习题_课本定理证明</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch7_InfiniteSeries/Exercises_Examples.pdf">习题_例题与错题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch7_InfiniteSeries/Exercises_Textbook.pdf">习题_课后题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch7_InfiniteSeries/Exercises_More.pdf">习题_补充题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch7_InfiniteSeries/Exerciese_ReviewLesson.pdf">习题_习题课</a></p>
+<h3 id="chapter8-解析几何">Chapter8 解析几何</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch8_AnalyticGeometry/Notes_SpaceCurvesAndSurfaces.pdf">课堂笔记_空间线与面</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch8_AnalyticGeometry/Notes_VectorsAndCoordinates.pdf">课堂笔记_向量与坐标系</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch8_AnalyticGeometry/Exercises_Textbook.pdf">习题_课后题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch8_AnalyticGeometry/Exercises_WrongQuestions.pdf">习题_错题整理</a></p>
+<h3 id="chapter9-多变量函数微分学">Chapter9 多变量函数微分学</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch9_DifferentiationOfFunctionsOfSeveralVariables/Notes_Differentials.pdf">课堂笔记_微分</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch9_DifferentiationOfFunctionsOfSeveralVariables/Notes_ImplicitFunction.pdf">课堂笔记_隐函数</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch9_DifferentiationOfFunctionsOfSeveralVariables/Notes_LimitsAndContinuity.pdf">极限与连续</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch9_DifferentiationOfFunctionsOfSeveralVariables/Notes_SpaceCurves.pdf">课堂笔记_空间曲线</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch9_DifferentiationOfFunctionsOfSeveralVariables/Notes_TaylorFormulaOfFunctionOfSeveralVariables.pdf">课堂笔记_多元函数的Taylor展开与极值</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch9_DifferentiationOfFunctionsOfSeveralVariables/Notes_DifferentialOfVectorFiled.pdf">课堂笔记_向量场的微分</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch9_DifferentiationOfFunctionsOfSeveralVariables/Review_Points.pdf">复习_知识点整理</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch9_DifferentiationOfFunctionsOfSeveralVariables/Exercises_Examples.pdf">习题_例题与错题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch9_DifferentiationOfFunctionsOfSeveralVariables/Exercises_Textbook.pdf">习题_课后题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch9_DifferentiationOfFunctionsOfSeveralVariables/Exercises_More.pdf">习题_补充题</a></p>
+<h3 id="chapter10-多变量函数重积分">Chapter10 多变量函数重积分</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch10_MultipleIntegrals/Notes_DoubleIntegral.pdf">课堂笔记_二重积分</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch10_MultipleIntegrals/Notes_TripleIntegral.pdf">课堂笔记_三重积分</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch10_MultipleIntegrals/Notes_MultipleIntegral.pdf">课堂笔记_n重积分</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch10_MultipleIntegrals/Exercises_Examples.pdf">习题_例题与错题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch10_MultipleIntegrals/Exercises_Textbook.pdf">习题_课后题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch10_MultipleIntegrals/Exercises_More.pdf">习题_补充题</a></p>
+<h3 id="chapter11-曲线积分和曲面积分">Chapter11 曲线积分和曲面积分</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch11_LineIntegralsAndSurfaceIntegrals/Notes_LineIntegralsAndSurfaceIntegrals.pdf">课堂笔记_曲线积分与曲面积分（预习）</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch11_LineIntegralsAndSurfaceIntegrals/Notes_PotentialField.pdf">课堂笔记_保守场</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch11_LineIntegralsAndSurfaceIntegrals/Notes_TheFirstType.pdf">课堂笔记_第一型积分</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch11_LineIntegralsAndSurfaceIntegrals/Notes_TheSecondType.pdf">课堂笔记_第二型积分</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch11_LineIntegralsAndSurfaceIntegrals/Notes_TheoriesandDifferentialForm.pdf">课堂笔记_微分形式</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch11_LineIntegralsAndSurfaceIntegrals/Review_Points.pdf">复习_知识点整理</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch11_LineIntegralsAndSurfaceIntegrals/Exercises_Examples.pdf">习题_例题与错题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch11_LineIntegralsAndSurfaceIntegrals/Exercises_Textbook.pdf">习题_课后题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch11_LineIntegralsAndSurfaceIntegrals/Exercises_More.pdf">习题_补充题</a></p>
+<h3 id="chapter12-fourier分析">Chapter12 Fourier分析</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch12_FourierAnalysis/Notes_FourierSeries.pdf">课堂笔记_Fourier级数</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch12_FourierAnalysis/Notes_FourierTransform.pdf">课堂笔记_Fourier变换</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch12_FourierAnalysis/Review_Points.pdf">复习_知识点整理</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch12_FourierAnalysis/Exercises_Examples.pdf">习题_例题与错题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch12_FourierAnalysis/Exercises_Textbook.pdf">习题_课后题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch12_FourierAnalysis/Exercises_More.pdf">习题_补充题</a></p>
+<h3 id="chapter13-广义积分与反常积分">Chapter13 广义积分与反常积分</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch13_ImproperIntegral/Notes_ImproperIntegral.pdf">课堂笔记_反常积分</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch13_ImproperIntegral/Notes_ImproperIntegralWithArgument.pdf">课堂笔记_含参变量的反常积分</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch13_ImproperIntegral/Review_PointsAndProofs.pdf">复习_知识点整理</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch13_ImproperIntegral/Exercises_Examples.pdf">习题_例题与错题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch13_ImproperIntegral/Exercises_Textbook.pdf">习题_课后题</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Ch13_ImproperIntegral/Exercises_More.pdf">习题_补充题</a></p>
+<h3 id="b1-考前刷卷">b1 考前刷卷</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Review_Mid.pdf">复习_期中知识框架</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Mid_03\357\275\23604.pdf">期中_03～04</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Mid_11\357\275\23612_1.pdf">第一次测试_11～12</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Mid_11\357\275\23612_2.pdf">第二次测试_11～12</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Mid_19\357\275\23620.pdf">期中_19～20</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Mid_20\357\275\23621.pdf">期中_20～21</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Mid_21\357\275\23622.pdf">期中_21～22（课堂讲解部分题目）</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Review_Final.pdf">复习_期末知识框架</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Final_03\357\275\23604.pdf">期末_03～04</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Final_16\357\275\23617.pdf">期末_16～17</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Final_17\357\275\23618.pdf">期末_17～18</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Final_18\357\275\23619.pdf">期末_18～19</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Final_19\357\275\23620.pdf">期末_19～20</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_1/Final_20\357\275\23621.pdf">期末_20～21</a></p>
+<h3 id="b2-考前刷卷">b2 考前刷卷</h3>
+<p><a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_2/Review_Mid.pdf">复习_期中知识框架</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_2/Mid_17\357\275\23618.pdf">期中_17～18</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_2/Mid_18\357\275\23619.pdf">期中_18～19</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_2/Mid_20\357\275\23621.pdf">期中_20～21</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_2/Exam_Mid.pdf">期中_21～22（课堂讲解部分题目）</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_2/Review_Final.pdf">复习_期末知识框架</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_2/Final_15\357\275\23616.pdf">期末_15～16</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_2/Final_16\357\275\23617.pdf">期末_16～17</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_2/Final_17\357\275\23618.pdf">期末_17～18</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_2/Final_18\357\275\23619.pdf">期末_18～19</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_2/Final_19\357\275\23620.pdf">期末_19～20</a><br>
+<a href="https://mint-cyq.github.io/files/MathematicalAnalysis/Test_2/Final_20\357\275\23621.pdf">期末_20～21</a></p>
+<!--### Onenote笔记分区源文件
+   
+[第一章 数与数列](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Ch1_NumbersAndSequences.one)    
+[第二章](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Ch2_Functions.one)    
+[第三章](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Ch3_Differential.one)    
+[第四章](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Ch4_IndefiniteIntegral.one)    
+[第五章](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Ch5_DefiniteIntegral.one)  
+[第六章](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Ch6_DifferentialEquations.one)  
+[第七章](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Ch7_InfiniteSeries.one)  
+[第八章](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Ch8_AnalyticGeometry.one)  
+[第九章](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Ch9_DifferentiationOfFunctionsOfSeveralVariables.one)    
+[第十章](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Ch10_MultipleIntegrals.one)  
+[第十一章](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Ch11_LineIntegralsAndSurfaceIntegrals.one)  
+[第十二章](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Ch12_FourierAnalysis.one)  
+[第十三章](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Ch13_ImproperIntegral.one)  
+[B1试题](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Test_b1.one)  
+[B2试题](https://mint-cyq.github.io/files/MathematicalAnalysis/Notebook/Test_b2.one)  -->
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/study/" rel="tag"># study</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/04/CollegePhysics/" rel="prev" title="Experiments CollegePhysics">
+      <i class="fa fa-chevron-left"></i> Experiments CollegePhysics
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-information-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">Basic Information | 基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#read-me-%E6%A6%82%E5%86%B5%E8%AF%B4%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">Read Me | 概况说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#notes-materials-exams-%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%E4%B8%8E%E8%AF%95%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">Notes &amp; Materials
+&amp; Exams | 笔记、整理与试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter1-%E6%95%B0%E4%B8%8E%E6%95%B0%E5%88%97"><span class="nav-number">3.1.</span> <span class="nav-text">Chapter1 数与数列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter2-%E5%87%BD%E6%95%B0"><span class="nav-number">3.2.</span> <span class="nav-text">Chapter2 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter3-%E5%BE%AE%E5%88%86"><span class="nav-number">3.3.</span> <span class="nav-text">Chapter3 微分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter4-%E4%B8%8D%E5%AE%9A%E7%A7%AF%E5%88%86%E5%8E%9F%E5%87%BD%E6%95%B0"><span class="nav-number">3.4.</span> <span class="nav-text">Chapter4 不定积分（原函数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter5-%E7%A7%AF%E5%88%86"><span class="nav-number">3.5.</span> <span class="nav-text">Chapter5 积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter6-%E5%B8%B8%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B"><span class="nav-number">3.6.</span> <span class="nav-text">Chapter6 常微分方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter7-%E6%97%A0%E7%A9%B7%E7%BA%A7%E6%95%B0"><span class="nav-number">3.7.</span> <span class="nav-text">Chapter7 无穷级数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter8-%E8%A7%A3%E6%9E%90%E5%87%A0%E4%BD%95"><span class="nav-number">3.8.</span> <span class="nav-text">Chapter8 解析几何</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter9-%E5%A4%9A%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E5%BE%AE%E5%88%86%E5%AD%A6"><span class="nav-number">3.9.</span> <span class="nav-text">Chapter9 多变量函数微分学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter10-%E5%A4%9A%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E9%87%8D%E7%A7%AF%E5%88%86"><span class="nav-number">3.10.</span> <span class="nav-text">Chapter10 多变量函数重积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter11-%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86%E5%92%8C%E6%9B%B2%E9%9D%A2%E7%A7%AF%E5%88%86"><span class="nav-number">3.11.</span> <span class="nav-text">Chapter11 曲线积分和曲面积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter12-fourier%E5%88%86%E6%9E%90"><span class="nav-number">3.12.</span> <span class="nav-text">Chapter12 Fourier分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter13-%E5%B9%BF%E4%B9%89%E7%A7%AF%E5%88%86%E4%B8%8E%E5%8F%8D%E5%B8%B8%E7%A7%AF%E5%88%86"><span class="nav-number">3.13.</span> <span class="nav-text">Chapter13 广义积分与反常积分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b1-%E8%80%83%E5%89%8D%E5%88%B7%E5%8D%B7"><span class="nav-number">3.14.</span> <span class="nav-text">b1 考前刷卷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b2-%E8%80%83%E5%89%8D%E5%88%B7%E5%8D%B7"><span class="nav-number">3.15.</span> <span class="nav-text">b2 考前刷卷</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="CHen Yuqing"
+      src="/images/JW5_1.jpeg">
+  <p class="site-author-name" itemprop="name">CHen Yuqing</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CHen Yuqing</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+
+  
+
+
+  <!-- 多级目录 -->
+  <script type="text/javascript" src="/js/category.js"></script>
+  
+</body>
+</html>

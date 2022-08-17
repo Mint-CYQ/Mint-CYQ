@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mint-cyq.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="本文主要针对大物实验的不确定度分析与有效数字进行说明，另外补充其他实验中的要点与注意事项。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Experiments CollegePhysics">
+<meta property="og:url" content="https://mint-cyq.github.io/2022/08/04/CollegePhysics/index.html">
+<meta property="og:site_name" content="CYQ’s BLOG">
+<meta property="og:description" content="本文主要针对大物实验的不确定度分析与有效数字进行说明，另外补充其他实验中的要点与注意事项。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-08-03T18:17:36.000Z">
+<meta property="article:modified_time" content="2022-08-06T02:29:01.451Z">
+<meta property="article:author" content="CHen Yuqing">
+<meta property="article:tag" content="study">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://mint-cyq.github.io/2022/08/04/CollegePhysics/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Experiments CollegePhysics | CYQ’s BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">CYQ’s BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mint-cyq.github.io/2022/08/04/CollegePhysics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/JW5_1.jpeg">
+      <meta itemprop="name" content="CHen Yuqing">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYQ’s BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Experiments CollegePhysics
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-08-03 18:17:36" itemprop="dateCreated datePublished" datetime="2022-08-03T18:17:36Z">2022-08-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-08-06 02:29:01" itemprop="dateModified" datetime="2022-08-06T02:29:01Z">2022-08-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Math-Phys-Basis/" itemprop="url" rel="index"><span itemprop="name">Math. & Phys. Basis</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文主要针对大物实验的不确定度分析与有效数字进行说明，另外补充其他实验中的要点与注意事项。
+<span id="more"></span></p>
+<h2 id="basic-information-基本信息">Basic Information | 基本信息</h2>
+<ul>
+<li>Subject: Experiments CollegePhysics</li>
+<li>Textbooks: 大学物理实验（其实并不需要</li>
+<li>Score:
+<ul>
+<li>22S 4.3/95</li>
+</ul></li>
+</ul>
+<h2 id="basics-基础知识">Basics ｜ 基础知识</h2>
+<h3 id="uncertainty-analysis-不确定度分析">Uncertainty Analysis ｜
+不确定度分析</h3>
+<h4 id="数据处理">数据处理</h4>
+<ul>
+<li>列表法</li>
+<li>作图法</li>
+<li>最小二乘法线性拟合</li>
+<li>逐差法</li>
+</ul>
+<h4 id="测量">测量</h4>
+<ul>
+<li>直接测量：用测量仪器直接得到的数据</li>
+<li>间接测量：用若干个直接测量得到的数据计算出的数据</li>
+<li>真值：实际的数据（理想）</li>
+</ul>
+<p>测量误差=测量值-真值<br>
+掌握测量误差的计算之后，可以计算真值=测量值 <span class="math inline">\(\pm\)</span> 测量误差</p>
+<h4 id="误差">误差</h4>
+<ul>
+<li>系统误差
+<ul>
+<li>公式近似导致的理论误差</li>
+<li>仪器不完善</li>
+<li>环境条件</li>
+<li>生理/心理因素</li>
+</ul></li>
+<li>偶然误差<br>
+测量结果随机性 正态分布<br>
+置信区间：人为划定的、认为该区间中的数据可信的范围<br>
+置信概率：数据落在置信区间内的概率，常见0.68、0.95</li>
+</ul>
+<h4 id="不确定度">不确定度</h4>
+<ul>
+<li>直接测量量
+<ul>
+<li>A类不确定度：多次测量后，测量数据列与平均值的标准差
+<ul>
+<li>平均值</li>
+<li>标准差<span class="math inline">\(σ\)</span> 贝塞尔公式计算<br>
+<strong>3<span class="math inline">\(σ\)</span>极限误差</strong>：无限次限量中测量误差绝对值大于3<span class="math inline">\(σ\)</span>的概率仅为0.3%，有限次测量中可以通过估算将这样的数据去除</li>
+<li>因子t 与测量次数n有关</li>
+</ul></li>
+<li>B类不确定度：单次测量情况下，不符合统计规律的不确定度
+<ul>
+<li>仪器最大允差<span class="math inline">\(\Delta_{仪}\)</span></li>
+<li>估计误差<span class="math inline">\(\Delta_{估}\)</span>
+最小刻度的几分之一</li>
+<li>置信系数C 与仪器测量误差的分布有关</li>
+<li>置信因子k 与置信概率有关</li>
+</ul></li>
+<li>合成不确定度：A类与B类不确定度通过平方和开根号计算合成
+<strong>相同置信概率时才可进行合成</strong></li>
+<li>展伸不确定度：合成不确定度乘上包含因子K</li>
+</ul></li>
+<li>间接测量量
+<ul>
+<li>一般通过不确定度传递公式进行合成</li>
+<li>另外有最大不确定度算术合成公式用于估计</li>
+<li>不确定度均分原理：测量结果的<strong>整体不确定度要求</strong>均匀分配到各个分量中，计算各分量影响从而选择仪器，指导实验</li>
+</ul></li>
+</ul>
+<h3 id="significance-digit-有效数字">significance digit ｜ 有效数字</h3>
+<p>能够测量到的数据位数，可靠的数字（+估读的一位）组成的数据的位数</p>
+<ul>
+<li>数据修约：四舍六入五进偶</li>
+<li>直接测量
+<ul>
+<li>带刻度的仪器：读到最小刻度后，按<span class="math inline">\(\Delta_{估}\)</span>往后估读一位</li>
+<li>数字式仪器：读出显示的数值，位数即为有效数字
+<ul>
+<li>示数稳定，读出数值即为可靠的数字</li>
+<li>示数末尾（一到两位）存在不稳定，读出稳定的之后按规律估读</li>
+</ul></li>
+</ul></li>
+<li>间接测量
+<ul>
+<li>加减运算：以小数位数最少的数据为标准，其他各运算数据多一位进行修约，结果的有效数字归到<strong>小数位数最少数据</strong>的有效数字</li>
+<li>乘除运算：以有效数字最少的数据为标准，其他各运算数据多一位进行修约，结果的有效数字归到<strong>有效数字最少数据</strong>的有效数字</li>
+</ul></li>
+<li>常数（如<span class="math inline">\(\pi\)</span>、e等）：<strong>多</strong>保留一位有效数字</li>
+<li>计算过程中得到的中间计算结果：可以多保留一位有效数字</li>
+<li>不确定度计算中得到的数字：<strong>化为科学计数法之后，小数点后保留一位；如果该位是1或2，则保留两位</strong></li>
+</ul>
+<h2 id="analysis-method-计算步骤-仅用于参考步骤">Analysis Method ｜
+计算步骤 <strong>（仅用于参考步骤）</strong></h2>
+<h3 id="根据精度要求设计实验---单摆法求重力加速度">根据精度要求设计实验
+- 单摆法求重力加速度</h3>
+<ol type="1">
+<li>列出间接测量量计算公式</li>
+</ol>
+<blockquote>
+<p>计算公式 <span class="math display">\[g=4\pi^2
+\frac{L}{T^2}\]</span></p>
+</blockquote>
+<ol start="2" type="1">
+<li>根据不确定度传递公式，将原公式取对数</li>
+</ol>
+<blockquote>
+<p>两边取对数得 <span class="math display">\[\frac{\Delta
+g}{g}=\frac{2\Delta T}{T}+\frac{\Delta L}{L}\]</span></p>
+</blockquote>
+<ol start="3" type="1">
+<li>根据误差均分原理，将所要求的精度误差平均分配到各分量上</li>
+</ol>
+<blockquote>
+<p>要求 <span class="math display">\[\frac{\Delta g}{g}&lt;1\%\]</span>
+根据误差均分原理，需要 <span class="math display">\[2\frac{\Delta
+T}{t}&lt;0.5\%\]</span> <span class="math display">\[\frac{\Delta
+L}{L}&lt;0.5\%\]</span>(其中t=nT,n=1,2,3......，L=l+D/2，l表示摆线长，D为摆球直径)</p>
+</blockquote>
+<ol start="4" type="1">
+<li>根据仪器的最大允差与误差要求，计算各分量的要求</li>
+</ol>
+<blockquote>
+<p>在所提供器材中，用钢卷尺测量摆线长度的不确定度<span class="math inline">\(\Delta_\text{尺}\approx0.2cm\)</span>，根据 <span class="math display">\[\frac{\Delta l}{l}&lt;0.5\%\]</span>有<span class="math display">\[l&gt;\frac{\Delta l}{0.5\%} \approx
+40cm\]</span>即仅从钢卷尺测量摆线计算，摆线长至少为40cm。</p>
+</blockquote>
+<p>需要结合实验的特点</p>
+<blockquote>
+<p>对于摆球，取实验室中常见的直径为2cm的钢球，用游标卡尺测量直径，其不确定度有
+<span class="math display">\[\frac{\Delta
+D}{D}=\frac{0.002}{2}=0.1\%\]</span>故在此情况下摆线长度不确定度最多为<span class="math inline">\(0.4\%\)</span>，则有 <span class="math display">\[\frac{\Delta l}{0.4\%} \approx 50cm\]</span>
+即计算得摆线长至少为50cm。</p>
+</blockquote>
+<blockquote>
+<p>用秒表记录时间的不确定度 <span class="math display">\[\Delta T\approx
+\Delta_\text{秒}+\Delta_\text{人}=0.21s\]</span><span class="math display">\[t=nT&gt;\frac{\Delta T}{0.25\%}\approx
+84s\]</span> 若对周期进行估计，可知需要 <span class="math display">\[nT=2\pi n\sqrt{\frac{l+D/2}{g}
+}&gt;84s\]</span>化简并估算可得测量周期数n和摆长L需要满足关系<span class="math display">\[n^2 L&gt;1751.6\]</span>
+因此若取摆线长l=50cm，此时摆长为51cm，周期数n取60；<br>
+若取摆线长l=60cm，此时摆长为61cm，周期数n至少取54；<br>
+若取摆线长l=70cm，此时摆长为71cm，周期数n至少取50。</p>
+</blockquote>
+<ol start="5" type="1">
+<li>取定数据，检验是否符合要求</li>
+</ol>
+<blockquote>
+<p>而由于在满足精度误差要求的情况下，摆长增加时，相对误差会减小，能够使得实验精度提高；
+并且在摆动过程中，更有利于把摆球看成质点。<br>
+<strong>故实际实验中：<br>
+取摆线70cm，使用钢卷尺测量；<br>
+取摆球直径2cm，使用游标卡尺测量；<br>
+使用秒表测量单摆摆动50个周期的时间。</strong><br>
+在此条件下，摆长的测量满足 <span class="math display">\[\Delta L \approx
+{\Delta_\text{尺} }+{\Delta_\text{卡} } \approx 0.202cm\]</span> <span class="math display">\[\frac{\Delta L}{l+D/2} \approx \frac{0.202}{71}
+\approx 0.285\%\]</span> 周期的测量满足 <span class="math display">\[\Delta T \approx
+\Delta_\text{秒}+\Delta_\text{人}=0.21s\]</span> <span class="math display">\[T \approx 1.69s\]</span> <span class="math display">\[\frac{\Delta T}{t} \approx \frac{0.21}{50\times
+1.69} \approx 0.248\%\]</span>总体精度满足要求。</p>
+</blockquote>
+<h3 id="根据主要误差和次要误差设计实验---切变模量的测量">根据主要误差和次要误差设计实验
+- 切变模量的测量</h3>
+<ol type="1">
+<li>列出间接测量量计算公式</li>
+</ol>
+<blockquote>
+<p>切变模量计算公式 <span class="math display">\[G=\frac{4\pi
+Lm({r_\text{内} }^2+{r_\text{外} }^2)}{R^4({T_1}^2-{T_0}^2)}=\frac{16\pi
+Lm({d_\text{内} }^2+{d_\text{外}
+}^2)}{d^4({T_1}^2-{T_0}^2)}\]</span></p>
+</blockquote>
+<ol start="2" type="1">
+<li>根据不确定度传递公式，将原公式取对数</li>
+</ol>
+<blockquote>
+<p>两边取对数得 <span class="math display">\[\frac{\Delta
+G}{G}=\frac{\Delta L}{L}+\frac{\Delta m}{m}+
+\frac{2r_\text{内} \Delta r_\text{内} }{ {r_\text{内} }^2+{r_\text{外}
+}^2}+\frac{2r_\text{外}\Delta r_\text{外} }{ {r_\text{内}
+}^2+{r_\text{外} }^2}
++\frac{4\Delta R}{R}+\frac{2n_1 T_1\Delta T_1}{(n_1 T_1)^2-(n_0
+T_0)^2}+\frac{2n_0 T_0\Delta T_0}{(n_1 T_1)^2-(n_0 T_0)^2}\]</span></p>
+</blockquote>
+<ol start="3" type="1">
+<li><strong>要求测量中的次要误差在计算中可以忽略，即要求控制次要误差不超过主要误差的<span class="math inline">\(\frac{1}{3}\)</span></strong></li>
+</ol>
+<blockquote>
+<p>为确定测量周期<span class="math inline">\(T_1\)</span>、<span class="math inline">\(T_0\)</span>的最小个数<span class="math inline">\(n_1\)</span>、<span class="math inline">\(n_0\)</span>，<br>
+要求<span class="math inline">\(\frac{2n_0 T_0\Delta T_0}{(n_1
+T_1)^2-(n_0 T_0)^2}\)</span>，<span class="math inline">\(\frac{2n_1
+T_1\Delta T_1}{(n_1 T_1)^2-(n_0 T_0)^2}\)</span>均不超过主要误差的<span class="math inline">\(\frac{1}{3}\)</span>，此处保守估计不超过主要误差的<span class="math inline">\(\frac{1}{5}\)</span> 即 <span class="math display">\[\frac{2n_0 T_0\Delta T_0}{(n_1 T_1)^2-(n_0
+T_0)^2},\frac{2n_1 T_1\Delta T_1}{(n_1 T_1)^2-(n_0
+T_0)^2}&lt;max\{\frac{\Delta L}{L},\frac{\Delta m}{m},\frac{2r_\text{内}
+\Delta r_\text{内} }{ {r_\text{内} }^2+{r_\text{外}
+}^2},\frac{2r_\text{外}\Delta r_\text{外} }{ {r_\text{内}
+}^2+{r_\text{外} }^2},\frac{4\Delta d}{d}\}\]</span></p>
+</blockquote>
+<ol start="4" type="1">
+<li>粗测各直接测量量，根据<span class="math inline">\(\Delta_{仪}\)</span>估计各个量的不确定度，找到主要误差</li>
+</ol>
+<blockquote>
+<p>金属环质量<span class="math inline">\(m\approx
+500g\)</span>，可以认为<span class="math inline">\(\Delta
+m=0.5g\)</span>，则<span class="math display">\[\frac{\Delta
+m}{m}\approx 0.001\]</span> 螺旋测微器精度<span class="math inline">\(\Delta_\text{螺}\approx0.001cm\)</span>，
+粗测钢丝直径<span class="math inline">\(d \approx
+0.08cm\)</span>，则<span class="math display">\[\frac{\Delta
+R}{R}=\frac{\Delta_\text{螺} }{d}\approx 0.0125\]</span>
+游标卡尺精度<span class="math inline">\(\Delta_\text{卡}\approx0.002cm\)</span>，
+粗测圆环内径<span class="math inline">\(r_\text{内}\approx
+8cm\)</span>，圆环外径<span class="math inline">\(r_\text{外}\approx
+10cm\)</span>， 则 <span class="math display">\[\frac{2r_\text{内}
+\Delta r_\text{内} }{ {r_\text{内} }^2+{r_\text{外} }^2}\approx
+0.00020\]</span> 卷尺精度<span class="math inline">\(\Delta_\text{卡}\approx0.2cm\)</span>，
+粗测钢丝长度<span class="math inline">\(L\approx 45cm\)</span>， 则
+<span class="math display">\[\frac{\Delta L}{L}=\frac{\Delta_\text{卡}
+}{L}\approx 0.0044\]</span></p>
+</blockquote>
+<ol start="5" type="1">
+<li>代入计算，得到目标值</li>
+</ol>
+<blockquote>
+<p>测量者的总反应时间<span class="math inline">\(\Delta_\text{人}\approx
+0.2s\)</span>，秒表的精度<span class="math inline">\(\Delta_\text{卡}\approx
+0.01s\)</span>，所以时间的精度<span class="math inline">\(\Delta
+t\approx 0.21s\)</span> 粗测周期<span class="math inline">\(T_1\approx
+3.6\)</span>，<span class="math inline">\(T_0\approx 2.4\)</span>， 因此
+<span class="math display">\[\frac{2n_0 T_0\Delta t}{(n_1 T_1)^2-(n_0
+T_0)^2}&lt;4\frac{\Delta R}{R}=0.05\]</span> <span class="math display">\[\frac{2n_1 T_1\Delta t}{(n_1 T_1)^2-(n_0
+T_0)^2}&lt;4\frac{\Delta R}{R}=0.05\]</span> 可解得<span class="math inline">\(n_1\)</span>至少要为30，<span class="math inline">\(n_0\)</span>至少要为50。为测量和计算方便，取<span class="math inline">\(n_0\)</span>、<span class="math inline">\(n_1\)</span>均为50。</p>
+</blockquote>
+<h3 id="实验结果的不确定度分析---切变模量的测量">实验结果的不确定度分析
+- 切变模量的测量</h3>
+<ol type="1">
+<li><p>取定统一的置信概率P（推荐0.95）</p></li>
+<li><p>计算直接测量量的不确定度</p></li>
+</ol>
+<ul>
+<li><p>对多次测量量，需要合成A类和B类不确定度</p>
+<ol type="1">
+<li><p>计算平均值</p></li>
+<li><p>使用贝塞尔公式计算标准差</p></li>
+</ol>
+<blockquote>
+<p>金属丝长度L测量的标准差 <span class="math display">\[\sigma_L=\sqrt{\frac{(46.48-46.45)^2+(46.42-46.45)^2+(46.45-46.45)^2}{3-1}
+}=0.0013cm\]</span></p>
+</blockquote>
+<ol start="3" type="1">
+<li>查表，根据次数n和置信概率P取定<span class="math inline">\(t_p\)</span>和<span class="math inline">\(k_p\)</span>；根据测量仪器确定最大允差和C</li>
+<li>使用不确定度合成公式计算不确定度</li>
+</ol>
+<blockquote>
+<p>那么金属丝长度L的展伸不确定度 <span class="math display">\[U_{Lp}=\sqrt{(t_p \frac{\sigma_L}{\sqrt{n}
+})^2+(k_p\frac{\Delta_\text{卷} }{C})^2}=0.24cm\]</span></p>
+</blockquote>
+<ol start="5" type="1">
+<li>(其他测量量同理)</li>
+</ol>
+<blockquote>
+<p>金属环内径<span class="math inline">\(r_\text{内}\)</span>测量的标准差<span class="math display">\[\sigma_{r_\text{内}
+}=\sqrt{\frac{(7.900-7.913)^2+(7.924-7.913)^2+(7.914-7.913)^2}{3-1}
+}=0.000206cm\]</span> 那么金属环内径<span class="math inline">\(r_\text{内}\)</span>的展伸不确定度<span class="math display">\[U_{r_\text{内} }=\sqrt{(t_p
+\frac{\sigma_{r_\text{内} } }{\sqrt{n} })^2+(k_p\frac{\Delta_\text{卡}
+}{C})^2}=0.0023cm\]</span> 金属环外径<span class="math inline">\(r_\text{外}\)</span>测量的标准差<span class="math display">\[\sigma_{r_\text{外}
+}=\sqrt{\frac{(10.000-10.003)^2+(10.010=10.003)^2+(10.000-10.003)^2}{3-1}
+}=0.0000471cm\]</span> 那么金属环外径<span class="math inline">\(r_\text{外}\)</span>的展伸不确定度<span class="math display">\[U_{r_\text{外} }=\sqrt{(t_p
+\frac{\sigma_{r_\text{外} } }{\sqrt{n} })^2+(k_p\frac{\Delta_\text{卡}
+}{C})^2}=0.0023cm\]</span></p>
+</blockquote>
+<blockquote>
+<p>金属丝直径d测量的标准差 <span class="math display">\[\sigma_d=\sqrt{\frac{(0.825-0.825)^2+(0.826-0.825)^2+(0.824-0.825)^2}{3-1}
+}=0.00000141mm\]</span> 那么金属丝直径d的展伸不确定度 <span class="math display">\[U_{dp}=\sqrt{(t_p \frac{\sigma_d}{\sqrt{n}
+})^2+(k_p\frac{\Delta_\text{螺} }{C})^2}=0.000653mm\]</span></p>
+</blockquote>
+<blockquote>
+<p>扭摆不放金属环的周期<span class="math inline">\(T_0\)</span>测量的标准差 <span class="math display">\[\sigma_{T_0}=\sqrt{\frac{(2.3310-2.3297)^2+(2.3294-2.3297)^2+(2.3288-2.3297)^2}{3-1}
+}=0.00000183s\]</span> 那么周期<span class="math inline">\(T_0\)</span>的展伸不确定度 <span class="math display">\[U_{T_0p}=\sqrt{(t_p \frac{\sigma_{T_0} }{\sqrt{n}
+})^2+(k_p\frac{\Delta_t}{C})^2}=0.025s\]</span> 扭摆放金属环的周期<span class="math inline">\(T_1\)</span>测量的标准差 <span class="math display">\[\sigma_{T_1}=\sqrt{\frac{(3.6432-3.6415)^2+(3.6394-3.6415)^2+(3.6420-3.6415)^2}{3-1}
+}=0.00000534s\]</span> 那么周期<span class="math inline">\(T_1\)</span>的展伸不确定度 <span class="math display">\[U_{T_1p}=\sqrt{(t_p \frac{\sigma_{T_1} }{\sqrt{n}
+})^2+(k_p\frac{\Delta_t}{C})^2}=0.025s\]</span></p>
+</blockquote></li>
+<li><p>对于单次测量量，只需要计算B类不确定度</p>
+<blockquote>
+<p>物块质量作为测量量处理，其用天平测量的展伸不确定度 <span class="math display">\[U_{mp}=k_p\frac{\Delta_{平} }{C}=1.645\times
+\frac{0.0005}{\sqrt{3} }=0.0005g\]</span></p>
+</blockquote></li>
+</ul>
+<ol start="3" type="1">
+<li>根据不确定度传递公式计算间接测量量的不确定度，并得出最终结果</li>
+</ol>
+<blockquote>
+<p>根据切变模量计算公式、扭转模量计算公式与不确定度传递公式，
+得G的不确定度 <span class="math display">\[\frac{\Delta G}{\bar{G}
+}=\sqrt{(\frac{\Delta L}{L})^2+(\frac{\Delta m}{m})^2+(\frac{4\Delta
+R}{R})^2+(\frac{2r_\text{内} \Delta r_\text{内} }{ {r_\text{内}
+}^2+{r_\text{外} }^2})^2+(\frac{2r_\text{外}\Delta r_\text{外} }{
+{r_\text{内} }^2+{r_\text{外} }^2})^2+(\frac{2T_1\Delta
+T_1}{(T_1)^2-(T_0)^2})^2+(\frac{2T_0\Delta
+T_0}{(T_1)^2-(T_0)^2})^2}\approx 0.0279\]</span> <span class="math display">\[U_{Gp}\approx 1.4\times 10^{-1} g/(cm\cdot s^2)
+\qquad P=0.95\]</span> D的不确定度 <span class="math display">\[\frac{\Delta D}{\bar{D} }=\sqrt{(\frac{\Delta
+m}{m})^2+(\frac{2r_\text{内} \Delta r_\text{内} }{ {r_\text{内}
+}^2+{r_\text{外} }^2})^2+(\frac{2r_\text{外}\Delta r_\text{外} }{
+{r_\text{内} }^2+{r_\text{外} }^2})^2+(\frac{2T_1\Delta
+T_1}{(T_1)^2-(T_0)^2})^2+(\frac{2T_0\Delta
+T_0}{(T_1)^2-(T_0)^2})^2}\approx 0.0273\]</span> <span class="math display">\[U_{Dp}\approx 1.4\times 10^{-1}g\cdot cm^2/s^2
+\qquad P=0.95\]</span> 根据切变模量计算公式，得G的平均值 <span class="math display">\[\bar{G}=\frac{4\pi Lm({r_\text{内}
+}^2+{r_\text{外} }^2)}{R^4({T_1}^2-{T_0}^2)}=\frac{16\pi
+\bar{L}m({\bar{d_\text{内} } }^2+{\bar{d_\text{外} }
+}^2)}{\bar{d}^4({\bar{T_1} }^2-{\bar{T_0} }^2)}\approx 5.179\times
+10^{11} g/(cm\cdot s^2)\]</span> 根据扭转模量计算公式，得D的平均值 <span class="math display">\[\bar{D}=\frac{4\pi^2}{
+{T_0}^2}I_0=4\pi^2\frac{I_1}{
+{T_1}^2-{T_0}^2}=\frac{\pi^2m({\bar{d_\text{内} } }^2+{\bar{d_\text{外}
+} }^2)}{2({\bar{T_1} }^2-{\bar{T_0} }^2)}\approx 5.071\times 10^4 g\cdot
+cm^2/s^2\]</span> 所以切变模量G最终的测量结果为 <span class="math display">\[G=\bar{G}\pm U_{Gp}=(5.18\pm 0.14)\times 10^{11}
+g/(cm\cdot s^2)\]</span> 扭转模量D的最终测量结果为 <span class="math display">\[D=\bar{D}\pm U_{Dp}=(5.07\pm 0.14)\times 10^{4}
+g\cdot cm^2/s^2\]</span></p>
+</blockquote>
+<h3 id="最小二乘法进行线性拟合与不确定度分析---钢丝测杨氏模量">最小二乘法进行线性拟合与不确定度分析
+- 钢丝测杨氏模量</h3>
+<h2 id="tips-其他注意点">Tips ｜ 其他注意点</h2>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/study/" rel="tag"># study</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/24/Linear-Algebra/" rel="prev" title="Linear Algebra">
+      <i class="fa fa-chevron-left"></i> Linear Algebra
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/13/MathematicalAnalysis/" rel="next" title="MathematicalAnalysis">
+      MathematicalAnalysis <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-information-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">Basic Information | 基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#basics-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">2.</span> <span class="nav-text">Basics ｜ 基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#uncertainty-analysis-%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-number">2.1.</span> <span class="nav-text">Uncertainty Analysis ｜
+不确定度分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86"><span class="nav-number">2.1.1.</span> <span class="nav-text">数据处理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8B%E9%87%8F"><span class="nav-number">2.1.2.</span> <span class="nav-text">测量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AF%E5%B7%AE"><span class="nav-number">2.1.3.</span> <span class="nav-text">误差</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%BA%A6"><span class="nav-number">2.1.4.</span> <span class="nav-text">不确定度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#significance-digit-%E6%9C%89%E6%95%88%E6%95%B0%E5%AD%97"><span class="nav-number">2.2.</span> <span class="nav-text">significance digit ｜ 有效数字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#analysis-method-%E8%AE%A1%E7%AE%97%E6%AD%A5%E9%AA%A4-%E4%BB%85%E7%94%A8%E4%BA%8E%E5%8F%82%E8%80%83%E6%AD%A5%E9%AA%A4"><span class="nav-number">3.</span> <span class="nav-text">Analysis Method ｜
+计算步骤 （仅用于参考步骤）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E7%B2%BE%E5%BA%A6%E8%A6%81%E6%B1%82%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C---%E5%8D%95%E6%91%86%E6%B3%95%E6%B1%82%E9%87%8D%E5%8A%9B%E5%8A%A0%E9%80%9F%E5%BA%A6"><span class="nav-number">3.1.</span> <span class="nav-text">根据精度要求设计实验
+- 单摆法求重力加速度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E6%8D%AE%E4%B8%BB%E8%A6%81%E8%AF%AF%E5%B7%AE%E5%92%8C%E6%AC%A1%E8%A6%81%E8%AF%AF%E5%B7%AE%E8%AE%BE%E8%AE%A1%E5%AE%9E%E9%AA%8C---%E5%88%87%E5%8F%98%E6%A8%A1%E9%87%8F%E7%9A%84%E6%B5%8B%E9%87%8F"><span class="nav-number">3.2.</span> <span class="nav-text">根据主要误差和次要误差设计实验
+- 切变模量的测量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%BA%A6%E5%88%86%E6%9E%90---%E5%88%87%E5%8F%98%E6%A8%A1%E9%87%8F%E7%9A%84%E6%B5%8B%E9%87%8F"><span class="nav-number">3.3.</span> <span class="nav-text">实验结果的不确定度分析
+- 切变模量的测量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E8%BF%9B%E8%A1%8C%E7%BA%BF%E6%80%A7%E6%8B%9F%E5%90%88%E4%B8%8E%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%BA%A6%E5%88%86%E6%9E%90---%E9%92%A2%E4%B8%9D%E6%B5%8B%E6%9D%A8%E6%B0%8F%E6%A8%A1%E9%87%8F"><span class="nav-number">3.4.</span> <span class="nav-text">最小二乘法进行线性拟合与不确定度分析
+- 钢丝测杨氏模量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tips-%E5%85%B6%E4%BB%96%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-number">4.</span> <span class="nav-text">Tips ｜ 其他注意点</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="CHen Yuqing"
+      src="/images/JW5_1.jpeg">
+  <p class="site-author-name" itemprop="name">CHen Yuqing</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">CHen Yuqing</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+  <!-- 多级目录 -->
+  <script type="text/javascript" src="/js/category.js"></script>
+  
+</body>
+</html>
