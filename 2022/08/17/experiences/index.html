@@ -28,7 +28,7 @@
 <meta property="og:description" content="【字字血泪】 本文可能是用来记录搭建博客中遇到的问题&#x2F;踩到的坑，记录解决方法和今后的注意事项。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-08-17T10:48:31.000Z">
-<meta property="article:modified_time" content="2022-08-17T06:55:59.129Z">
+<meta property="article:modified_time" content="2022-08-17T06:58:42.558Z">
 <meta property="article:author" content="CHen Yuqing">
 <meta property="article:tag" content="others">
 <meta name="twitter:card" content="summary">
@@ -195,7 +195,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-08-17 10:48:31 / Modified: 06:55:59" itemprop="dateCreated datePublished" datetime="2022-08-17T10:48:31Z">2022-08-17</time>
+              <time title="Created: 2022-08-17 10:48:31 / Modified: 06:58:42" itemprop="dateCreated datePublished" datetime="2022-08-17T10:48:31Z">2022-08-17</time>
             </span>
 
           
@@ -224,117 +224,13 @@
 <p>网上的教程很多，然而各个教程的详略程度有差别，加上博客文件夹中许多重名的文件，导致个人当时配置背景尝试很久没有成功。</p>
 <h4 id="操作步骤">操作步骤</h4>
 <ol type="1">
-<li><p>添加背景图片文件<br />
+<li>添加背景图片文件<br />
 在next主题文件夹中（<code>/themes/next</code>）的<code>source</code>文件夹中，找到<code>images</code>目录并添加背景图片文件<code>background.jpg</code><br />
 （即地址为<code>/themes/next/source/images/background.jpg</code>）<br />
-</p></li>
-<li><p>修改配置<br />
+</li>
+<li>修改配置<br />
 打开<strong>next主题配置</strong>的<code>_config.yml</code>文件，定位到如下片段<br />
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># Define custom file paths.</span><br><span class="line"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span><br><span class="line">custom_file_path:</span><br><span class="line">#head: source/_data/head.swig</span><br><span class="line">#header: source/_data/header.swig</span><br><span class="line">#sidebar: source/_data/sidebar.swig</span><br><span class="line">#postMeta: source/_data/post-meta.swig</span><br><span class="line">#postBodyEnd: source/_data/post-body-end.swig</span><br><span class="line">#footer: source/_data/footer.swig</span><br><span class="line">#bodyEnd: source/_data/body-end.swig</span><br><span class="line">#variable: source/_data/variables.styl</span><br><span class="line">#mixin: source/_data/mixins.styl</span><br><span class="line">#style: source/_data/styles.styl</span><br></pre></td></tr></table></figure> 将最下面的<code>style</code>取消注释<br />
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    style: source/_data/styles.styl</span><br><span class="line">    ```  </span><br><span class="line">3. 创建背景配置文件  </span><br><span class="line">   **在博客根目录的`source`文件夹下**新建`_data`文件夹与`styles.styl`文件，添加代码  </span><br></pre></td></tr></table></figure> // 添加背景图片 body { background:
-url(/images/background.jpg);//第一步的图片地址 background-size: cover;
-background-repeat: no-repeat; background-attachment: fixed;
-background-position: 50% 50%; } <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4. 高级修改：背景透明度调整  </span><br></pre></td></tr></table></figure> .content-wrap { opacity:
-0.8; } .main-inner { // margin-top: 60px; // padding: 60px 60px 60px
-60px; .post-block { background: rgba(255,255,255,0.8) none repeat scroll
-!important; } } //侧边框的透明度设置 .sidebar { opacity: 0.8; }
-//菜单栏的透明度设置 .header-inner { background: rgba(255,255,255,0.8);
-} //搜索框（local-search）的透明度设置 .popup { opacity: 0.7; }
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5. 重要的一步  </span><br><span class="line">    在`/themes/next/source/css/main.styl`文件的末尾添加如下代码   </span><br></pre></td></tr></table></figure> // Custom Layer //
--------------------------------------------------- for $inject_style in
-hexo-config('injects.style') <span class="citation"
-data-cites="import">@import</span>
-'/Users/chenyuqing/blog/source/_data/styles.styl'; <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">    用于导入至配置文件    </span><br><span class="line">6. `hexo clean &amp;&amp; hexo g -d`生成并部署即可    </span><br><span class="line"></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### Tips</span><br><span class="line">- **每一步的目标文件夹**</span><br><span class="line">- 最后一步的导入代码</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### 数学公式 Mathjax  </span><br><span class="line">   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### Large files  </span><br><span class="line">#### 前情提要  </span><br><span class="line">我**怎么就不小心`hexo g -d`了超过100m的大文件  </span><br><span class="line">部署了很久，然而显示</span><br></pre></td></tr></table></figure>
-枚举对象中: 67, 完成. 对象计数中: 100% (67/67), 完成. 使用 8
-个线程进行压缩 Connection to github.com closed by remote host.
-send-pack: unexpected disconnect while reading sideband packet
-压缩对象中: 100% (52/52), 完成. fatal: 远端意外挂断了57) FATAL { err:
-Error: Spawn failed at ChildProcess.<anonymous>
-(/Users/chenyuqing/blog/node_modules/hexo-util/lib/spawn.js:51:21) at
-ChildProcess.emit (node:events:537:28) at ChildProcess._handle.onexit
-(node:internal/child_process:291:12) { code: 128 } } Something's wrong.
-Maybe you can find the solution here: %s
-https://hexo.io/docs/troubleshooting.html <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">就算真的部署完毕了也不能成功，显示    </span><br></pre></td></tr></table></figure> remote: warning:
-File files/MathematicalAnalysis/Notebook/Ch8_AnalyticGeometry.one is
-74.82 MB; this is larger than GitHub's recommended maximum file size of
-50.00 MB remote: warning: File
-files/MathematicalAnalysis/Notebook/Test_b1.one is 52.46 MB; this is
-larger than GitHub's recommended maximum file size of 50.00 MB remote:
-warning: File files/MathematicalAnalysis/Notebook/Test_b2.one is 82.30
-MB; this is larger than GitHub's recommended maximum file size of 50.00
-MB remote: warning: File
-files/MathematicalAnalysis/Notebook/Ch6_DifferentialEquations.one is
-86.36 MB; this is larger than GitHub's recommended maximum file size of
-50.00 MB remote: error: Trace:
-589652ae3f02e38266f560fb2a49243b2f2710fe06a49f20fab4842dcad4d899 remote:
-error: See http://git.io/iEPt8g for more information. remote: error:
-File files/MathematicalAnalysis/Notebook/Ch13_ImproperIntegral.one is
-200.91 MB; this exceeds GitHub's file size limit of 100.00 MB remote:
-error: File files/MathematicalAnalysis/Notebook/Ch3_Differential.one is
-358.02 MB; this exceeds GitHub's file size limit of 100.00 MB remote:
-error: File
-files/MathematicalAnalysis/Notebook/Ch11_LineIntegralsAndSurfaceIntegrals.one
-is 275.85 MB; this exceeds GitHub's file size limit of 100.00 MB remote:
-error: File files/MathematicalAnalysis/Notebook/Ch12_FourierAnalysis.one
-is 113.83 MB; this exceeds GitHub's file size limit of 100.00 MB remote:
-error: File
-files/MathematicalAnalysis/Notebook/Ch4_IndefiniteIntegral.one is 109.76
-MB; this exceeds GitHub's file size limit of 100.00 MB remote: error:
-File
-files/MathematicalAnalysis/Notebook/Ch9_DifferentiationOfFunctionsOfSeveralVariables.one
-is 175.32 MB; this exceeds GitHub's file size limit of 100.00 MB remote:
-error: File
-files/MathematicalAnalysis/Notebook/Ch10_MultipleIntegrals.one is 189.91
-MB; this exceeds GitHub's file size limit of 100.00 MB remote: error:
-File files/MathematicalAnalysis/Notebook/Ch2_Functions.one is 218.66 MB;
-this exceeds GitHub's file size limit of 100.00 MB remote: error: GH001:
-Large files detected. You may want to try Git Large File Storage -
-https://git-lfs.github.com. To
-github.com:Mint-CYQ/mint-cyq.github.io.git ! [remote rejected] HEAD
--&gt; master (pre-receive hook declined) error: 无法推送一些引用到
-'github.com:Mint-CYQ/mint-cyq.github.io.git' FATAL { err: Error: Spawn
-failed at ChildProcess.<anonymous>
-(/Users/chenyuqing/blog/node_modules/hexo-util/lib/spawn.js:51:21) at
-ChildProcess.emit (node:events:537:28) at ChildProcess._handle.onexit
-(node:internal/child_process:291:12) { code: 1 } } Something's wrong.
-Maybe you can find the solution here: %s
-https://hexo.io/docs/troubleshooting.html <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#### 解决过程</span><br><span class="line">1. 首先当然是把本地文件夹中的大文件删了。但是没有用，还是会进行部署  </span><br><span class="line">   于是复制了报错信息，上网寻找教程，使用`git filter-branch --index-filter &#x27;git rm --cached --ignore-unmatch  目标文件路径&#x27; -- --all`命令，发现输出   </span><br></pre></td></tr></table></figure> WARNING: Ref
-'refs/heads/master' is unchanged <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   说明提交的目标分支内文件没有变   </span><br><span class="line">   于是使用`git log`命令查看提交内容，发现没有输出   </span><br><span class="line">   很头秃。这表示我并没有提交任何东西到github上    </span><br><span class="line">2. 继续上网找教程，发现都是`git commit`相关，并没有提及`hexo d`的背景    </span><br><span class="line">   修改关键词之后查找，找到一两篇hexo提交大文件的相关内容，其中提到了用于部署的`.deploy_git`文件夹  </span><br><span class="line">   而我在我的博客根目录下没有找到该目录   </span><br><span class="line">   又卡了一下。但是在终端键入`cd .deploy_git`命令，发现是可以进去的</span><br><span class="line">   然后使用`git log`，跳出多次提交记录，按q退出</span><br></pre></td></tr></table></figure> commit
-485d8b27a090e13062482a9157c4bd771c608b73 (HEAD -&gt; master) Author:
-陈煜晴 <a href="mailto:chenyuqing@chenyuqingdeMacBook-Pro.local"
-class="email">chenyuqing@chenyuqingdeMacBook-Pro.local</a> Date: Wed Aug
-17 09:52:15 2022 +0800</p>
-<pre><code>Site updated: 2022-08-17 09:51:56</code></pre>
-<p>commit 2afc20dc630ea4a1d223ad6e03cbb712bb7f0c06 Author: 陈煜晴 <a
-href="mailto:chenyuqing@chenyuqingdeMacBook-Pro.local"
-class="email">chenyuqing@chenyuqingdeMacBook-Pro.local</a> Date: Mon Aug
-15 16:22:28 2022 +0800</p>
-<pre><code>Site updated: 2022-08-15 16:21:16</code></pre>
-<p>commit e0dd530e8fd0aeb745f4179364034a52db455be8 Author: 陈煜晴 <a
-href="mailto:chenyuqing@chenyuqingdeMacBook-Pro.local"
-class="email">chenyuqing@chenyuqingdeMacBook-Pro.local</a> Date: Sun Aug
-14 14:50:57 2022 +0800</p>
-<pre><code>Site updated: 2022-08-14 14:50:39</code></pre>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">好…明白了，意思是这个目录才是真正提交到github中的   </span><br><span class="line">于是找到大文件对应的提交记录，执行重置命令</span><br></pre></td></tr></table></figure>
-<p>git reset 2afc20dc630ea4a1d223ad6e03cbb712bb7f0c06 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">   跳出信息</span><br><span class="line">   ```   </span><br><span class="line">   重置后取消暂存的变更：</span><br><span class="line">   M	2022/08/13/MathematicalAnalysis/index.html</span><br><span class="line">   M	css/main.css</span><br><span class="line">   D	files/MathematicalAnalysis/Notebook/Ch10_MultipleIntegrals.one</span><br><span class="line">   D	files/MathematicalAnalysis/Notebook/Ch11_LineIntegralsAndSurfaceIntegrals.one</span><br><span class="line">   D	files/MathematicalAnalysis/Notebook/Ch12_FourierAnalysis.one</span><br><span class="line">   (还有很多)</span><br><span class="line">   M	index.html</span><br><span class="line">   ```   </span><br><span class="line">   应该找对路了   </span><br><span class="line">   然后进行`hexo clean &amp;&amp; hexo g -d`   </span><br><span class="line">   还是不行？？报和之前一样的错误   </span><br><span class="line">3. 最后直接把`.deploy_git`文件夹一整个删除   </span><br><span class="line">   `cd blog`进入博客根目录，执行`hexo clean &amp;&amp; hexo g -d`   </span><br><span class="line">   等了很久…因为是重建整个部署页面   </span><br><span class="line">   最终居然成功了   </span><br></pre></td></tr></table></figure>
-枚举对象中: 278, 完成. 对象计数中: 100% (278/278), 完成. 使用 8
-个线程进行压缩 压缩对象中: 100% (257/257), 完成. 写入对象中: 100%
-(278/278), 1.93 GiB | 1.54 MiB/s, 完成. 总共 278（差异 20），复用
-0（差异 0），包复用 0 remote: Resolving deltas: 100% (20/20), done.
-remote: warning: See http://git.io/iEPt8g for more information. remote:
-warning: File
-files/MathematicalAnalysis/Ch9_DifferentiationOfFunctionsOfSeveralVariables/Exercises_Textbook.pdf
-is 51.75 MB; this is larger than GitHub's recommended maximum file size
-of 50.00 MB remote: warning: GH001: Large files detected. You may want
-to try Git Large File Storage - https://git-lfs.github.com. To
-github.com:Mint-CYQ/mint-cyq.github.io.git</p>
-<ul>
-<li>e0dd530...990248c HEAD -&gt; master (forced update) 分支 'master'
-设置为跟踪 'git@github.com:Mint-CYQ/mint-cyq.github.io.git/master'。
-INFO Deploy done: git ```<br />
-然后结束<br />
-#### 教训 别**给我传大文件。</li>
-</ul></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># Define custom file paths.</span><br><span class="line"># Create your custom files in site directory `source/_data` and uncomment needed files below.</span><br><span class="line">custom_file_path:</span><br><span class="line">#head: source/_data/head.swig</span><br><span class="line">#header: source/_data/header.swig</span><br><span class="line">#sidebar: source/_data/sidebar.swig</span><br><span class="line">#postMeta: source/_data/post-meta.swig</span><br><span class="line">#postBodyEnd: source/_data/post-body-end.swig</span><br><span class="line">#footer: source/_data/footer.swig</span><br><span class="line">#bodyEnd: source/_data/body-end.swig</span><br><span class="line">#variable: source/_data/variables.styl</span><br><span class="line">#mixin: source/_data/mixins.styl</span><br><span class="line">#style: source/_data/styles.styl</span><br></pre></td></tr></table></figure> 将最下面的<code>style</code>取消注释</li>
 </ol>
 
     </div>
