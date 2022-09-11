@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"mint-cyq.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="本文用于存放整理线性代数b1课程的笔记，并总结一些学习经验。 Basic Information | 基本信息  Subject: ElectronicMagnetics  Textbooks: 电磁学与电动力学(上册),2nd. 胡友秋  Reference books:  电磁学(第四版),梁灿彬">
+  <meta name="description" content="本文用于存放整理线性代数b1课程的笔记，并总结一些学习经验。 Basic Information | 基本信息  Subject: ElectronicMagnetics  Textbooks: 电磁学与电动力学(上册),2nd. 胡友秋  Reference books:  Introduction to Electrodynamics,3rd. David J. Griffiths">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ElectronicMagnetics">
 <meta property="og:url" content="https://mint-cyq.github.io/2022/09/06/ElectronicMagnetics/index.html">
 <meta property="og:site_name" content="CYQ’s BLOG">
-<meta property="og:description" content="本文用于存放整理线性代数b1课程的笔记，并总结一些学习经验。 Basic Information | 基本信息  Subject: ElectronicMagnetics  Textbooks: 电磁学与电动力学(上册),2nd. 胡友秋  Reference books:  电磁学(第四版),梁灿彬">
+<meta property="og:description" content="本文用于存放整理线性代数b1课程的笔记，并总结一些学习经验。 Basic Information | 基本信息  Subject: ElectronicMagnetics  Textbooks: 电磁学与电动力学(上册),2nd. 胡友秋  Reference books:  Introduction to Electrodynamics,3rd. David J. Griffiths">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-09-05T21:12:14.000Z">
-<meta property="article:modified_time" content="2022-09-07T05:22:01.404Z">
+<meta property="article:modified_time" content="2022-09-11T13:09:09.024Z">
 <meta property="article:author" content="CHen Yuqing">
 <meta property="article:tag" content="study">
 <meta name="twitter:card" content="summary">
@@ -201,7 +201,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-07 05:22:01" itemprop="dateModified" datetime="2022-09-07T05:22:01Z">2022-09-07</time>
+                <time title="Modified: 2022-09-11 13:09:09" itemprop="dateModified" datetime="2022-09-11T13:09:09Z">2022-09-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -240,9 +240,9 @@
 </li>
 <li>Reference books:
 <ul>
-<li>电磁学(第四版),梁灿彬<br />
-<span id="more"></span></li>
 <li>Introduction to Electrodynamics,3rd. David J. Griffiths<br />
+<span id="more"></span></li>
+<li>电磁学(第四版),梁灿彬<br />
 </li>
 <li>电磁学千题解, 张之翔<br />
 </li>
@@ -253,103 +253,151 @@
 </ul></li>
 </ul>
 <h2 id="read-me-概况说明">Read Me | 概况说明</h2>
+<p>21级工院培养方案要求在22秋修电磁学B，然而我个人为了减轻该学期负担，选择在22春季（大一下）学期提前学习这门课；又因为本学期开设的唯一一个电磁学B课程和一门工院的讲座课程冲突，无法叠课，因此选择学习电磁学A。从课程难度和学期的总体安排来看，这都是一个不小的挑战。</p>
+<p>个人的学习方法分为如下几步：</p>
+<ul>
+<li>在开始上课之前（寒假）将整本教材预习一遍，抄写其中的知识点、公式等内容<br />
+会有很多不明白的内容，可参考其他教材互相补充，或者干脆放着等开学再学</li>
+<li>上课时认真听，尽量记笔记<br />
+（但事实证明老师讲得过快，很多地方来不及记录甚至听不懂，这一步在后期变得可有可无）<br />
+</li>
+<li>课后将老师的ppt弄懂，copy成自己的笔记，其中的例题要求自己能够独立解答<br />
+</li>
+<li>作业是课后题全写（就算不是，这本教材的课后习题质量也很高，需要全部弄懂）
+<ul>
+<li>第一遍肯定会有许多不会的题，通过看例题/看答案，看懂之后尝试自己写一遍（电子设备上）<br />
+</li>
+<li>第一遍能够自己独立完成的题目pass，需要借助才可写出的题目标出，过一段时间再写一遍，若会则pass，若不会则再进入循环<br />
+</li>
+<li>直到所有题都在电子设备上独立写一遍为止</li>
+<li>交作业之前将电子设备上的作业内容抄写到纸质作业本上，若有空也可以再次独立写一遍，将电子设备上的内容当作答案来修正校对；若来不及也可以直接无脑抄<br />
+</li>
+</ul></li>
+<li>遇到不熟的地方可以进行千题解/大题典等补充题的写<br />
+</li>
+<li>考前看一遍错题/第一遍不会写的题，可尝试再独立写一遍，以及写一点能摸到的样卷/往年题</li>
+</ul>
+<p>整体是一个比较花时间的过程。当时还因为自己掌握得慢、不会的多，作业完成得比翘课的人还慢很多而难过很久。但是事实证明，一步步踏踏实实掌握知识，虽然慢，但是方向不会错。</p>
+<p>最后期中考试老师出卷放水、卷子简单，卷面分86；期末考试稍微有点难，助教改卷放水，卷面分75。加上调分（以及算起来好像没有加分的小论文），总评95。</p>
 <h2 id="notes-materials-exams-笔记整理与试题">Notes &amp; Materials
 &amp; Exams | 笔记、整理与试题</h2>
 <h3 id="chapter1-真空中的静电场">Chapter1 真空中的静电场</h3>
 <p><a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch1_ElectrostaticField/ExamplesAndMistakes.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch1_ElectrostaticField/Notes_ElectrostaticFieldInVacuum.pdf">课堂笔记_真空中的静电场</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch1_ElectrostaticField/Exercises_More.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch1_ElectrostaticField/ExamplesAndMistakes.pdf">习题_例题与错题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch1_ElectrostaticField/Exercises_Textbook.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch1_ElectrostaticField/Exercises_Textbook.pdf">习题_课后题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch1_ElectrostaticField/Notes_ElectrostaticFieldInVacuum.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch1_ElectrostaticField/Exercises_More.pdf">习题_补充题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch1_ElectrostaticField/Review_Points.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch1_ElectrostaticField/Review_Points.pdf">预习_知识点整理</a></p>
+<h3 id="chapter2-静电场中的导体和电介质">Chapter2
+静电场中的导体和电介质</h3>
+<p><a
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch2_ElectrostaticFieldConductorAndDielectric/Notes_ConductorsAndDielectricsInElectrostaticField.pdf">课堂笔记_静电场中的导体和电介质</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch2_ElectrostaticFieldConductorAndDielectric/ExamplesAndMistakes.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch2_ElectrostaticFieldConductorAndDielectric/ExamplesAndMistakes.pdf">习题_例题与错题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch2_ElectrostaticFieldConductorAndDielectric/Exercises_More.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch2_ElectrostaticFieldConductorAndDielectric/Exercises_Textbook.pdf">习题_课后题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch2_ElectrostaticFieldConductorAndDielectric/Exercises_Textbook.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch2_ElectrostaticFieldConductorAndDielectric/Exercises_More.pdf">习题_补充题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch2_ElectrostaticFieldConductorAndDielectric/Notes_ConductorsAndDielectricsInElectrostaticField.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch2_ElectrostaticFieldConductorAndDielectric/Review_Points.pdf">预习_知识点整理</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch2_ElectrostaticFieldConductorAndDielectric/Review_Points.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch2_ElectrostaticFieldConductorAndDielectric/Review_Points2.pdf">复习_知识点整理</a></p>
+<h3 id="chapter3-静电能">Chapter3 静电能</h3>
+<p><a
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch3_ElectrostaticEnergy/Notes_ElectrostaticEnergy.pdf">课堂笔记_静电能</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch2_ElectrostaticFieldConductorAndDielectric/Review_Points2.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch3_ElectrostaticEnergy/ExamplesAndMistakes.pdf">习题_例题与错题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch3_ElectrostaticEnergy/ExamplesAndMistakes.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch3_ElectrostaticEnergy/Exercises_More.pdf">习题_补充题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch3_ElectrostaticEnergy/Exercises_More.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch3_ElectrostaticEnergy/Exercises_Textbook.pdf">习题_课后题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch3_ElectrostaticEnergy/Exercises_Textbook.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch3_ElectrostaticEnergy/Review_Points.pdf">预习_知识点整理</a></p>
+<h3 id="chapter4-稳恒电流">Chapter4 稳恒电流</h3>
+<p><a
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch4_SteadyCurrent/Notes_SteadyCurrent.pdf">课堂笔记_稳恒电流</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch3_ElectrostaticEnergy/Notes_ElectrostaticEnergy.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch4_SteadyCurrent/Exercises_More.pdf">习题_补充题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch3_ElectrostaticEnergy/Review_Points.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch4_SteadyCurrent/Exercises_Textbook.pdf">习题_课后题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch4_SteadyCurrent/Exercises_More.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch4_SteadyCurrent/Review_Points.pdf">预习_知识点整理</a></p>
+<h3 id="chapter5-真空中的静磁场">Chapter5 真空中的静磁场</h3>
+<p><a
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch5_StaticMagneticField/Notes_StaticFieldInVacuum.pdf">课堂笔记_真空中的静磁场</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch4_SteadyCurrent/Exercises_Textbook.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch5_StaticMagneticField/ExamplesAndMistakes.pdf">习题_例题与错题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch4_SteadyCurrent/Notes_SteadyCurrent.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch5_StaticMagneticField/Exercises_Textbook.pdf">习题_课后题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch4_SteadyCurrent/Review_Points.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch5_StaticMagneticField/Review_Points.pdf">预习_知识点整理</a></p>
+<h3 id="chapter6-静磁场中的磁介质">Chapter6 静磁场中的磁介质</h3>
+<p><a
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch6_StaticMagneticFieldMagneticMedium/Notes_MagneticMediumOfElectromagneticField.pdf">课堂笔记_静磁场中的磁介质</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch5_StaticMagneticField/ExamplesAndMistakes.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch6_StaticMagneticFieldMagneticMedium/ExamplesAndMistakes.pdf">习题_例题与错题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch5_StaticMagneticField/Exercises_Textbook.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch6_StaticMagneticFieldMagneticMedium/Exercises_Textbook.pdf">习题_课后题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch5_StaticMagneticField/Notes_StaticFieldInVacuum.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch6_StaticMagneticFieldMagneticMedium/Review_Points.pdf">预习_知识点整理</a></p>
+<h3 id="chapter7-电磁感应">Chapter7 电磁感应</h3>
+<p><a
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch7_ElectromagneticInduction/Notes_ElectromagneticInduction.pdf">课堂笔记_电磁感应</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch5_StaticMagneticField/Review_Points.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch7_ElectromagneticInduction/ExamplesAndMistakes.pdf">习题_例题与错题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch6_StaticMagneticFieldMagneticMedium/ExamplesAndMistakes.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch7_ElectromagneticInduction/Exercises_Textbook.pdf">习题_课后题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch6_StaticMagneticFieldMagneticMedium/Exercises_Textbook.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch7_ElectromagneticInduction/Review_Points.pdf">预习_知识点整理</a></p>
+<h3 id="chapter8-磁能">Chapter8 磁能</h3>
+<p><a
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch8_MagneticEnergy/Notes_MagneticEnergy.pdf">课堂笔记_磁能</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch6_StaticMagneticFieldMagneticMedium/Notes_MagneticMediumOfElectromagneticField.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch8_MagneticEnergy/ExamplesAndMistakes.pdf">习题_例题与错题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch6_StaticMagneticFieldMagneticMedium/Review_Points.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch8_MagneticEnergy/Exercises_Textbook.pdf">习题_课后题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch7_ElectromagneticInduction/ExamplesAndMistakes.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch8_MagneticEnergy/Review_Points.pdf">预习_知识点整理</a></p>
+<h3 id="chapter9-交流电路">Chapter9 交流电路</h3>
+<p><a
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch9_ACCircuit/Notes_ACCircuit.pdf">课堂笔记_交流电路</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch7_ElectromagneticInduction/Exercises_Textbook.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch9_ACCircuit/Exercises_Textbook.pdf">习题_课后题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch7_ElectromagneticInduction/Notes_ElectromagneticInduction.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch9_ACCircuit/Review_Points.pdf">预习_知识点整理</a></p>
+<h3 id="chapter10-麦克斯韦电磁理论">Chapter10 麦克斯韦电磁理论</h3>
+<p><a
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch10_MaxwellElectromagneticTheory/Notes_MaxwellElectromagneticTheory.pdf">课堂笔记_</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch7_ElectromagneticInduction/Review_Points.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch10_MaxwellElectromagneticTheory/ExamplesAndMistakes.pdf">习题_例题与错题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch8_MagneticEnergy/ExamplesAndMistakes.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch10_MaxwellElectromagneticTheory/Exercises_Textbook.pdf">习题_课后题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch8_MagneticEnergy/Exercises_Textbook.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Ch10_MaxwellElectromagneticTheory/Review_Points.pdf">预习_知识点整理</a></p>
+<h3 id="考前复习">考前复习</h3>
+<p><a
+href="https://mint-cyq.github.io/files/Electromagnetics/Test/Review_UnfamiliarPoints.pdf">复习_不熟知识点</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch8_MagneticEnergy/Notes_MagneticEnergy.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Test/TheFinalExamsAvailable.pdf">能摸到的往年题</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch8_MagneticEnergy/Review_Points.pdf"></a>
+href="https://mint-cyq.github.io/files/Electromagnetics/Test/FinalSample.pdf">期末样卷</a><br />
 <a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch9_ACCircuit/Exercises_Textbook.pdf"></a>
-<a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch9_ACCircuit/Notes_ACCircuit.pdf"></a>
-<a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch9_ACCircuit/Review_Points.pdf"></a>
-<a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch10_MaxwellElectromagneticTheory/ExamplesAndMistakes.pdf"></a>
-<a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch10_MaxwellElectromagneticTheory/Exercises_Textbook.pdf"></a>
-<a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch10_MaxwellElectromagneticTheory/Notes_MaxwellElectromagneticTheory.pdf"></a>
-<a
-href="https://mint-cyq.github.io/files/Electromagnetics/Ch10_MaxwellElectromagneticTheory/Review_Points.pdf"></a>
-<a
-href="https://mint-cyq.github.io/files/Electromagnetics/Test/FinalSample.pdf"></a>
-<a
-href="https://mint-cyq.github.io/files/Electromagnetics/Test/MiddleSample.pdf"></a>
-<a
-href="https://mint-cyq.github.io/files/Electromagnetics/Test/Review_UnfamiliarPoints.pdf"></a>
-<a
-href="https://mint-cyq.github.io/files/Electromagnetics/Test/TheFinalExamsAvailable.pdf"></a></p>
+href="https://mint-cyq.github.io/files/Electromagnetics/Test/MiddleSample.pdf">期中样卷</a></p>
+<h2 id="thesis-关于小论文">Thesis ｜ 关于小论文</h2>
+<h3 id="选题">选题</h3>
+<p>因为懒得做实验所以选择了做模拟。<br />
+因为什么都不会所以首先查论文，看看有没有自己能够理解又有“可做的点”的选题。<br />
+（选题范围来自自己科学与社会研讨课中做可控核聚变时，查询相关资料后发现的感兴趣的点）<br />
+然后确定的可选的两个是磁势阱和磁镜。<br />
+最后因为磁镜的可参考案例更多，选择探究磁镜。<br />
+为了深化研究，寻找了磁镜的应用（串列磁镜、环链磁镜等），由于能够查到KMAX的详细资料和数据，确定选题为《有关KMAX串列磁镜的模拟和探究》。</p>
+<h3 id="跑模拟与写论文">跑模拟与写论文</h3>
+<h3 id="答辩">答辩</h3>
+<h3 id="感想与心得">感想与心得</h3>
 
     </div>
 
@@ -431,7 +479,8 @@ href="https://mint-cyq.github.io/files/Electromagnetics/Test/TheFinalExamsAvaila
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-information-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">Basic Information | 基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#read-me-%E6%A6%82%E5%86%B5%E8%AF%B4%E6%98%8E"><span class="nav-number">2.</span> <span class="nav-text">Read Me | 概况说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#notes-materials-exams-%E7%AC%94%E8%AE%B0%E6%95%B4%E7%90%86%E4%B8%8E%E8%AF%95%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">Notes &amp; Materials
-&amp; Exams | 笔记、整理与试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter1-%E7%9C%9F%E7%A9%BA%E4%B8%AD%E7%9A%84%E9%9D%99%E7%94%B5%E5%9C%BA"><span class="nav-number">3.1.</span> <span class="nav-text">Chapter1 真空中的静电场</span></a></li></ol></li></ol></div>
+&amp; Exams | 笔记、整理与试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter1-%E7%9C%9F%E7%A9%BA%E4%B8%AD%E7%9A%84%E9%9D%99%E7%94%B5%E5%9C%BA"><span class="nav-number">3.1.</span> <span class="nav-text">Chapter1 真空中的静电场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter2-%E9%9D%99%E7%94%B5%E5%9C%BA%E4%B8%AD%E7%9A%84%E5%AF%BC%E4%BD%93%E5%92%8C%E7%94%B5%E4%BB%8B%E8%B4%A8"><span class="nav-number">3.2.</span> <span class="nav-text">Chapter2
+静电场中的导体和电介质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter3-%E9%9D%99%E7%94%B5%E8%83%BD"><span class="nav-number">3.3.</span> <span class="nav-text">Chapter3 静电能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter4-%E7%A8%B3%E6%81%92%E7%94%B5%E6%B5%81"><span class="nav-number">3.4.</span> <span class="nav-text">Chapter4 稳恒电流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter5-%E7%9C%9F%E7%A9%BA%E4%B8%AD%E7%9A%84%E9%9D%99%E7%A3%81%E5%9C%BA"><span class="nav-number">3.5.</span> <span class="nav-text">Chapter5 真空中的静磁场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter6-%E9%9D%99%E7%A3%81%E5%9C%BA%E4%B8%AD%E7%9A%84%E7%A3%81%E4%BB%8B%E8%B4%A8"><span class="nav-number">3.6.</span> <span class="nav-text">Chapter6 静磁场中的磁介质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter7-%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94"><span class="nav-number">3.7.</span> <span class="nav-text">Chapter7 电磁感应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter8-%E7%A3%81%E8%83%BD"><span class="nav-number">3.8.</span> <span class="nav-text">Chapter8 磁能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter9-%E4%BA%A4%E6%B5%81%E7%94%B5%E8%B7%AF"><span class="nav-number">3.9.</span> <span class="nav-text">Chapter9 交流电路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chapter10-%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E7%94%B5%E7%A3%81%E7%90%86%E8%AE%BA"><span class="nav-number">3.10.</span> <span class="nav-text">Chapter10 麦克斯韦电磁理论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%80%83%E5%89%8D%E5%A4%8D%E4%B9%A0"><span class="nav-number">3.11.</span> <span class="nav-text">考前复习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#thesis-%E5%85%B3%E4%BA%8E%E5%B0%8F%E8%AE%BA%E6%96%87"><span class="nav-number">4.</span> <span class="nav-text">Thesis ｜ 关于小论文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E9%A2%98"><span class="nav-number">4.1.</span> <span class="nav-text">选题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%91%E6%A8%A1%E6%8B%9F%E4%B8%8E%E5%86%99%E8%AE%BA%E6%96%87"><span class="nav-number">4.2.</span> <span class="nav-text">跑模拟与写论文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%94%E8%BE%A9"><span class="nav-number">4.3.</span> <span class="nav-text">答辩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%84%9F%E6%83%B3%E4%B8%8E%E5%BF%83%E5%BE%97"><span class="nav-number">4.4.</span> <span class="nav-text">感想与心得</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
