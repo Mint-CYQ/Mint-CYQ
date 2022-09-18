@@ -165,6 +165,117 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mint-cyq.github.io/2022/09/17/ComputerWeb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/JW5_1.jpeg">
+      <meta itemprop="name" content="CHen Yuqing">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYQ’s BLOG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/09/17/ComputerWeb/" class="post-title-link" itemprop="url">Experiment(1)：Web Page</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-09-17 10:35:58" itemprop="dateCreated datePublished" datetime="2022-09-17T10:35:58Z">2022-09-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-09-18 10:05:14" itemprop="dateModified" datetime="2022-09-18T10:05:14Z">2022-09-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>本文用于记录计网第一次实验——个人网页的步骤与过程。</p>
+<h3 id="basic-information-基本信息">Basic Information ｜ 基本信息</h3>
+<ul>
+<li>Device: MacBook Pro</li>
+<li>System: macOS Monterey 12.4</li>
+<li>Virtual Device: Windows 10 (Supported by Parallels 17)</li>
+</ul>
+<h3 id="steps-操作步骤">Steps | 操作步骤</h3>
+<h4 id="preparation">Preparation</h4>
+<h5 id="jdk">JDK</h5>
+<ul>
+<li>Software: Java 2 SDK x.x.x</li>
+<li>Links:<br />
+</li>
+<li>Path: C:2sdk</li>
+</ul>
+<p>Configuration:</p>
+<ol type="1">
+<li>右键“此电脑”，点击“属性”-“高级系统设置”-“环境变量”</li>
+<li>新建变量<code>JAVA_HOME</code>，添加变量值<code>C:\JAVA\j2sdk</code><br />
+</li>
+<li>新建变量<code>CLASSPATH</code>，添加变量值<code>.;%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\jre\lib\dt.jar;</code>
+其中<code>.</code>表示当前路径，<code>;</code>为windows系统分隔符</li>
+<li>在系统变量<code>PATH</code>中点击“编辑”，然后点击“新建”添加变量值<code>%JAVA_HOME%\bin</code></li>
+<li>在cmd中输入<code>java -version</code>，<code>java</code>，<code>javac</code>可以检验是否安装配置成功</li>
+</ol>
+<h5 id="tomcat">Tomcat</h5>
+<ul>
+<li>Software: Jakatar-tomcat-5.0.28</li>
+<li>Links:</li>
+<li>Path: C:</li>
+</ul>
+<p>Configuration:</p>
+<ol type="1">
+<li>右键“此电脑”，点击“属性”-“高级系统设置”-“环境变量”</li>
+<li>新建变量<code>CATALINA_HOME</code>，添加变量值<code>C:\JAVA\Tomcat5.0</code><br />
+</li>
+<li>在系统变量<code>PATH</code>中点击“编辑”，添加变量值<code>%CATALINA_HOME%\bin</code>，<code>%CATALINA_HOME%\lib</code>，<code>%CATALINA_HOME%\lib\servlet-api.jar</code></li>
+</ol>
+<p>Run:</p>
+<ul>
+<li>安装目录下，进入<code>\bin</code>文件夹，点击<code>startup.bat</code>批处理程序使Tomcat运行</li>
+<li>浏览器中输入地址http://localhost.8080，看到Tomcat欢迎界面说明配置成功</li>
+<li>点击<code>\bin</code>中的<code>shutdown.bat</code>批处理文件停止运行</li>
+</ul>
+<h5 id="eclipse">Eclipse</h5>
+<h5 id="myeclipse">MyEclipse</h5>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://mint-cyq.github.io/2022/09/06/ElectronicMagnetics/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -904,7 +1015,7 @@ you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hex
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
