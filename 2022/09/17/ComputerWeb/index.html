@@ -28,7 +28,7 @@
 <meta property="og:description" content="本文用于记录计网第一次实验——个人网页的步骤与过程。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-09-17T10:35:58.000Z">
-<meta property="article:modified_time" content="2022-09-19T11:22:37.708Z">
+<meta property="article:modified_time" content="2022-09-19T11:57:06.212Z">
 <meta property="article:author" content="CHen Yuqing">
 <meta property="article:tag" content="study">
 <meta name="twitter:card" content="summary">
@@ -201,7 +201,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-19 11:22:37" itemprop="dateModified" datetime="2022-09-19T11:22:37Z">2022-09-19</time>
+                <time title="Modified: 2022-09-19 11:57:06" itemprop="dateModified" datetime="2022-09-19T11:57:06Z">2022-09-19</time>
               </span>
 
           
@@ -223,15 +223,15 @@
 
       
         <p>本文用于记录计网第一次实验——个人网页的步骤与过程。 <span id="more"></span></p>
-<h3 id="basic-information-基本信息">Basic Information ｜ 基本信息</h3>
+<h2 id="basic-information-基本信息">Basic Information ｜ 基本信息</h2>
 <ul>
 <li>Device: MacBook Pro</li>
 <li>System: macOS Monterey 12.4</li>
 <li>Virtual Device: Windows 10 (Supported by Parallels 17)</li>
 </ul>
-<h3 id="steps-操作步骤">Steps | 操作步骤</h3>
-<h4 id="preparation">Preparation</h4>
-<h5 id="jdk">JDK</h5>
+<h2 id="steps-操作步骤">Steps | 操作步骤</h2>
+<h3 id="preparation">Preparation</h3>
+<h4 id="jdk">JDK</h4>
 <ul>
 <li>Software: Java 2 SDK x.x.x</li>
 <li>Links:<br />
@@ -248,7 +248,7 @@
 <li>在系统变量<code>PATH</code>中点击“编辑”，然后点击“新建”添加变量值<code>%JAVA_HOME%\bin</code></li>
 <li>在cmd中输入<code>java -version</code>，<code>java</code>，<code>javac</code>可以检验是否安装配置成功</li>
 </ol>
-<h5 id="tomcat">Tomcat</h5>
+<h4 id="tomcat">Tomcat</h4>
 <ul>
 <li>Software:
 Jakatar-tomcat-5.0.28（原先不太懂然后跟着助教传的十几年前的教程下了一个古早版本…但也还能用）</li>
@@ -268,7 +268,47 @@ Jakatar-tomcat-5.0.28（原先不太懂然后跟着助教传的十几年前的�
 <li>浏览器中输入地址http://localhost.8080，看到Tomcat欢迎界面说明配置成功</li>
 <li>点击<code>\bin</code>中的<code>shutdown.bat</code>批处理文件停止运行</li>
 </ul>
-<h5 id="idea">IDEA</h5>
+<h4 id="idea">IDEA</h4>
+<ul>
+<li>Software: IntelliJ IDEA Ultimate 2022.2.2（Trial）<br />
+</li>
+<li>Links:<br />
+</li>
+<li>Path: C:（即用型）</li>
+</ul>
+<p>Configuration:</p>
+<ol type="1">
+<li>New project -- Empty project
+<ul>
+<li>Project Name: Web<br />
+</li>
+<li>Project Location: C:</li>
+</ul></li>
+<li>File - Project Structure - Project<br />
+Choose JDK &amp; Language Level of matched downloaded version<br />
+</li>
+<li>Run - Edit Configuration
+<ul>
+<li>+(Add), Tomcat Server - Local (Only Ultimate supporting)</li>
+<li>Application Server: C:<br />
+</li>
+<li>JRE: the matched version<br />
+</li>
+<li>Click OK and "Tomcat Server" appears at rightbottom<br />
+</li>
+</ul></li>
+<li>File - New - Module
+<ul>
+<li>Java Enterprise - Web Application (In setting javaee clicked)<br />
+</li>
+<li>SDK &amp; Java EE &amp; Server: matched ones<br />
+</li>
+</ul></li>
+<li>Module Name: WebTest<br />
+</li>
+<li>Check</li>
+</ol>
+<h3 id="experiments">Experiments</h3>
 
     </div>
 
@@ -349,7 +389,7 @@ Jakatar-tomcat-5.0.28（原先不太懂然后跟着助教传的十几年前的�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-information-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">Basic Information ｜ 基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#steps-%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">Steps | 操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#preparation"><span class="nav-number">2.1.</span> <span class="nav-text">Preparation</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#jdk"><span class="nav-number">2.1.1.</span> <span class="nav-text">JDK</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#tomcat"><span class="nav-number">2.1.2.</span> <span class="nav-text">Tomcat</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#idea"><span class="nav-number">2.1.3.</span> <span class="nav-text">IDEA</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-information-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">Basic Information ｜ 基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#steps-%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">Steps | 操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#preparation"><span class="nav-number">2.1.</span> <span class="nav-text">Preparation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jdk"><span class="nav-number">2.1.1.</span> <span class="nav-text">JDK</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#tomcat"><span class="nav-number">2.1.2.</span> <span class="nav-text">Tomcat</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#idea"><span class="nav-number">2.1.3.</span> <span class="nav-text">IDEA</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#experiments"><span class="nav-number">2.2.</span> <span class="nav-text">Experiments</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
