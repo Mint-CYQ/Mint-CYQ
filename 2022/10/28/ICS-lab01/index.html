@@ -20,15 +20,19 @@
     var CONFIG = {"hostname":"mint-cyq.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="CYQ’s BLOG">
-<meta property="og:url" content="https://mint-cyq.github.io/categories/Others/index.html">
+  <meta name="description" content="本文用于记录计算系统概论第一次实验的步骤与过程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICS lab 1：Counting how many 1">
+<meta property="og:url" content="https://mint-cyq.github.io/2022/10/28/ICS-lab01/index.html">
 <meta property="og:site_name" content="CYQ’s BLOG">
+<meta property="og:description" content="本文用于记录计算系统概论第一次实验的步骤与过程。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-27T16:16:50.000Z">
+<meta property="article:modified_time" content="2023-03-15T12:06:54.793Z">
 <meta property="article:author" content="CHen Yuqing">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://mint-cyq.github.io/categories/Others/">
+<link rel="canonical" href="https://mint-cyq.github.io/2022/10/28/ICS-lab01/">
 
 
 <script id="page-configurations">
@@ -36,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Category: Others | CYQ’s BLOG</title>
+  <title>ICS lab 1：Counting how many 1 | CYQ’s BLOG</title>
   
 
 
@@ -159,71 +163,140 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">Others
-          <small>Category</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mint-cyq.github.io/2022/10/28/ICS-lab01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/JW5_1.jpeg">
+      <meta itemprop="name" content="CHen Yuqing">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CYQ’s BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ICS lab 1：Counting how many 1
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-10-27 16:16:50" itemprop="dateCreated datePublished" datetime="2022-10-27T16:16:50Z">2022-10-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-03-15 12:06:54" itemprop="dateModified" datetime="2023-03-15T12:06:54Z">2023-03-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Science/" itemprop="url" rel="index"><span itemprop="name">Computer Science</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2022</span>
+        <p>本文用于记录计算系统概论第一次实验的步骤与过程。 <span id="more"></span></p>
+<h2 id="basic-information-基本信息">Basic Information ｜ 基本信息</h2>
+<ul>
+<li>Device: DELL</li>
+<li>System: Kubuntu 22.04</li>
+<li>Platform: LC-3 simulator</li>
+<li>Language: assembler language</li>
+</ul>
+<h2 id="steps-操作步骤">Steps | 操作步骤</h2>
+<h3 id="preparation">Preparation</h3>
+<ul>
+<li>Download LC-3 Simulator from <a
+target="_blank" rel="noopener" href="http://highered.mheducation.com/sites/0072467509/student_view0/lc-3_simulator_lab_manual.html">Web</a>
+path: /home/Jeffrey/Downloads/ICS/lc3tools</li>
+<li>Install modules: gcc, wish, flex <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install gcc</span><br><span class="line">sudo apt install wish</span><br><span class="line">sudo apt install flex</span><br></pre></td></tr></table></figure></li>
+<li>Open Makefile
+<ul>
+<li>find 'OS_SIM_LIBS = -lcurses'</li>
+<li>delete '-lcurses'</li>
+</ul></li>
+<li>cd Downloads/ICS/lc3tools</li>
+<li>bash Compilation: <code>make</code></li>
+<li>bash instruction: <code>./lc3sim</code> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">PC=x0494 IR=xB1AE PSR=x0400 (ZERO)</span><br><span class="line">R0=x0000 R1=x7FFF R2=x0000 R3=x0000 R4=x0000 R5=x0000 R6=x0000 R7=x0490</span><br><span class="line">x0494 x0FF9 BRNZP TRAP_HALT</span><br><span class="line">(lc3sim)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="tools-functions">Tools &amp; Functions</h3>
+<ul>
+<li>Start the simulator: <code>./lc3sim-tk</code></li>
+<li>.asm to .obj &amp; .sym: <code>./lc3as &lt;filename&gt;</code></li>
+<li>.hex to .obj: <code>./lc3convert -b16 addnums.hex</code></li>
+<li>.bin to .obj: <code>./lc3convert -b2 addnums.bin</code></li>
+</ul>
+<h2 id="contents-实验内容">Contents ｜ 实验内容</h2>
+<h3 id="purpose">Purpose</h3>
+<p>Write a program in LC-3 machine language, which counts how many 1 are
+in the lower B bits of a given number A. The output will be stored in
+memory.</p>
+<h3 id="principles">Principles</h3>
+<p>R0 x3100 A</p>
+<p>R1 x3101 B</p>
+<p>R2 x3102 Output</p>
+<p>R3 x3103 marker: mark whether the bit is 0 or 1</p>
+<p>R4 x3104 pointer: point lower B bits</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-08-17T10:48:31Z"
-              content="2022-08-17">
-          08-17
-        </time>
-      </div>
+      <footer class="post-footer">
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/08/17/experiences/" itemprop="url">
-            <span itemprop="name">Problems & Solutions & Experiences</span>
-          </a>
-      </div>
+        
 
-    </header>
-  </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2022-07-09T11:00:29Z"
-              content="2022-07-09">
-          07-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2022/07/09/Blog/" itemprop="url">
-            <span itemprop="name">First Blog</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/26/ComputerWeb2/" rel="prev" title="ComputerWeb Experiment 2：Socket Programming">
+      <i class="fa fa-chevron-left"></i> ComputerWeb Experiment 2：Socket Programming
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
-  
-
   
 
 
@@ -276,6 +349,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-information-%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">1.</span> <span class="nav-text">Basic Information ｜ 基本信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#steps-%E6%93%8D%E4%BD%9C%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">Steps | 操作步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#preparation"><span class="nav-number">2.1.</span> <span class="nav-text">Preparation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tools-functions"><span class="nav-number">2.2.</span> <span class="nav-text">Tools &amp; Functions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#contents-%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="nav-number">3.</span> <span class="nav-text">Contents ｜ 实验内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#purpose"><span class="nav-number">3.1.</span> <span class="nav-text">Purpose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#principles"><span class="nav-number">3.2.</span> <span class="nav-text">Principles</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
